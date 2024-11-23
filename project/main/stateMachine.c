@@ -2,6 +2,7 @@
 #include "stateMachine.h"
 #include "led.h"
 #include "switches.h"
+#include "buzzer.h"
 
 char toggle_red(){ //toggle methods for the state machine, always toggle
   static char state = 0;
@@ -32,7 +33,6 @@ char toggle_green(){ //green toggle is based on the red, only if red is on
 }
 
 
-
 void led_state_advance(){
 
   char change = 0;
@@ -52,5 +52,18 @@ void led_state_advance(){
   led_update();
 }
 void switch_state_advance(){
+  switch (switch_state){
+  case 1:
+    buzzer_set_period(1300);
+    break;
+  case 2:
+    buzzer_set_period(200);
+    break;
+  case 3:
+    buzzer_set_period(700);
+  case 4:
+    buzzer_off();
+    break;
+  }
   led_update();
 }

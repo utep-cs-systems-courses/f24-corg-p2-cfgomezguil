@@ -14,7 +14,7 @@ all: project.elf
 
 
 
-project.elf: ${COMMON_OBJECTS} main.c stateMachine.o led.o interupt_handler.o wdInterruptHandler.o switches.o ../lib/libTimer.a
+project.elf: ${COMMON_OBJECTS} main.c stateMachine.o led.o interupt_handler.o wdInterruptHandler.o switches.o buzzer.o ../lib/libTimer.a
 
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
@@ -36,7 +36,7 @@ led.o: led.c led.h
 
 stateMachine.o: stateMachine.c stateMachine.h
 
-# buzzer.o: buzzer.c buzzer.h
+buzzer.o: buzzer.c buzzer.h
 
 switches.o: switches.c switches.h
 
