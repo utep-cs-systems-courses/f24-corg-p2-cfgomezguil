@@ -1,0 +1,33 @@
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project/main> cd ..
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make 
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make[1]: *** No rule to make target 'stateMachines.c', needed by 'stateMachines.o'.  Stop.
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c:2:10: fatal error: stateMachines.h: No such file or directory
+ #include "stateMachines.h"
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> 

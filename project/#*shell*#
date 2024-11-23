@@ -1,0 +1,267 @@
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project/main> cd ..
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make 
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make[1]: *** No rule to make target 'stateMachines.c', needed by 'stateMachines.o'.  Stop.
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c:2:10: fatal error: stateMachines.h: No such file or directory
+ #include "stateMachines.h"
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> ls
+h  lib  main  Makefile  Makefile~  README.md  *shell*  timerLib
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c:2:10: fatal error: stateMachines.h: No such file or directory
+ #include "stateMachines.h"
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c: In function 'toggle_red':
+stateMachine.c:8:3: error: 'RED_ON' undeclared (first use in this function); did you mean 'REFON'?
+   RED_ON = ~RED_ON;
+   ^~~~~~
+   REFON
+stateMachine.c:8:3: note: each undeclared identifier is reported only once for each function it appears in
+stateMachine.c: In function 'toggle_green':
+stateMachine.c:17:5: error: 'GREEN_ON' undeclared (first use in this function); did you mean 'REFON'?
+     GREEN_ON = ~GREEN_ON;
+     ^~~~~~~~
+     REFON
+stateMachine.c: In function 'led_state_advance':
+stateMachine.c:35:3: error: 'led_switch' undeclared (first use in this function)
+   led_switch = change;
+   ^~~~~~~~~~
+stateMachine.c:36:3: warning: implicit declaration of function 'led_update'; did you mean 'light_update'? [-Wimplicit-function-declaration]
+   led_update();
+   ^~~~~~~~~~
+   light_update
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c: In function 'toggle_red':
+stateMachine.c:8:3: error: 'RED_ON' undeclared (first use in this function); did you mean 'REFON'?
+   RED_ON = ~RED_ON;
+   ^~~~~~
+   REFON
+stateMachine.c:8:3: note: each undeclared identifier is reported only once for each function it appears in
+stateMachine.c: In function 'toggle_green':
+stateMachine.c:17:5: error: 'GREEN_ON' undeclared (first use in this function); did you mean 'REFON'?
+     GREEN_ON = ~GREEN_ON;
+     ^~~~~~~~
+     REFON
+stateMachine.c: In function 'led_state_advance':
+stateMachine.c:35:3: error: 'led_switch' undeclared (first use in this function); did you mean 'led_init'?
+   led_switch = change;
+   ^~~~~~~~~~
+   led_init
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c: In function 'toggle_red':
+stateMachine.c:8:3: error: 'RED_ON' undeclared (first use in this function); did you mean 'REFON'?
+   RED_ON = ~RED_ON;
+   ^~~~~~
+   REFON
+stateMachine.c:8:3: note: each undeclared identifier is reported only once for each function it appears in
+stateMachine.c: In function 'toggle_green':
+stateMachine.c:16:7: error: 'RED_ON' undeclared (first use in this function); did you mean 'REFON'?
+   if (RED_ON){
+       ^~~~~~
+       REFON
+stateMachine.c:17:5: error: 'GREEN_ON' undeclared (first use in this function); did you mean 'REFON'?
+     GREEN_ON = ~GREEN_ON;
+     ^~~~~~~~
+     REFON
+stateMachine.c: In function 'led_state_advance':
+stateMachine.c:35:3: error: 'led_switch' undeclared (first use in this function); did you mean 'led_init'?
+   led_switch = change;
+   ^~~~~~~~~~
+   led_init
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c: In function 'toggle_red':
+stateMachine.c:8:3: error: 'RED_ON' undeclared (first use in this function); did you mean 'REFON'?
+   RED_ON = ~RED_ON;
+   ^~~~~~
+   REFON
+stateMachine.c:8:3: note: each undeclared identifier is reported only once for each function it appears in
+stateMachine.c: In function 'toggle_green':
+stateMachine.c:16:7: error: 'RED_ON' undeclared (first use in this function); did you mean 'REFON'?
+   if (RED_ON){
+       ^~~~~~
+       REFON
+stateMachine.c:17:5: error: 'GREEN_ON' undeclared (first use in this function); did you mean 'REFON'?
+     GREEN_ON = ~GREEN_ON;
+     ^~~~~~~~
+     REFON
+stateMachine.c: In function 'led_state_advance':
+stateMachine.c:35:3: error: 'led_switch' undeclared (first use in this function); did you mean 'led_init'?
+   led_switch = change;
+   ^~~~~~~~~~
+   led_init
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c: In function 'led_state_advance':
+stateMachine.c:35:3: error: 'led_switch' undeclared (first use in this function); did you mean 'led_init'?
+   led_switch = change;
+   ^~~~~~~~~~
+   led_init
+stateMachine.c:35:3: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c: In function 'led_state_advance':
+stateMachine.c:35:3: error: 'led_switch' undeclared (first use in this function); did you mean 'led_init'?
+   led_switch = change;
+   ^~~~~~~~~~
+   led_init
+stateMachine.c:35:3: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c: In function 'led_state_advance':
+stateMachine.c:35:3: error: 'led_switch' undeclared (first use in this function); did you mean 'led_init'?
+   led_switch = change;
+   ^~~~~~~~~~
+   led_init
+stateMachine.c:35:3: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> make
+(cd timerLib && make install)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+msp430-elf-ar crs libTimer.a clocksTimer.o sr.o
+mkdir -p ../h ../lib
+mv libTimer.a ../lib
+cp *.h ../h
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/timerLib'
+(cd main; make)
+make[1]: Entering directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+msp430-elf-gcc -mmcu=msp430g2553 -I../h   -c -o stateMachine.o stateMachine.c
+stateMachine.c: In function 'led_state_advance':
+stateMachine.c:35:3: error: 'led_switch' undeclared (first use in this function); did you mean 'led_init'?
+   led_switch = change;
+   ^~~~~~~~~~
+   led_init
+stateMachine.c:35:3: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [<builtin>: stateMachine.o] Error 1
+make[1]: Leaving directory '/home/student/lab_projects/f24-corg-p2-cfgomezguil/project/main'
+make: *** [Makefile:3: all] Error 2
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> ls
+h  lib  main  Makefile  Makefile~  README.md  *shell*  *shell*~  #*shell*#  timerLib
+student@systems-vm:~/lab_projects/f24-corg-p2-cfgomezguil/project> 
